@@ -14,26 +14,28 @@ public class Gallic {
     private CivicStatusEnum civicStatus;
     private ArrayList<PotionUsage> potionUsages;
 
-    public Gallic(String _name, String _NNIG, String _birthdate, int _weight, String _street, int _streetNumber, ArrayList<Characteristic> _characteristics, Neighborhood _neighorhood, ProfessionEnum _profession, CivicStatusEnum _civicStatus) {
-        name = _name; NNIG = _NNIG; birthDate = _birthdate; weight = _weight; street = _street; streetNumber = _streetNumber;
-        initialCharacteristics = _characteristics; characteristics = _characteristics;
-        neighborhood = _neighorhood; profession = _profession; civicStatus = _civicStatus;
+    public Gallic(String _name, String _NNIG, String _birthdate, int _weight, String _street, int _streetNumber, ArrayList<Characteristic> _characteristics, Neighborhood _neighborhood, ProfessionEnum _profession, CivicStatusEnum _civicStatus) {
+        if(_NNIG.length() != 13) throw new IllegalArgumentException("Le NNIG du gaulois doit contenir 13 caractères");
+
+        name = _name;
+        NNIG = _NNIG;
+        birthDate = _birthdate;
+        weight = _weight;
+        street = _street;
+        streetNumber = _streetNumber;
+        initialCharacteristics = _characteristics;
+        characteristics = _characteristics;
+        neighborhood = _neighborhood;
+        profession = _profession;
+        civicStatus = _civicStatus;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getNNIG() {
         return NNIG;
-    }
-
-    public void setNNIG(String NNIG) {
-        this.NNIG = NNIG;
     }
 
     public String getBirthDate() {
@@ -52,11 +54,11 @@ public class Gallic {
         return streetNumber;
     }
 
-    public ArrayList<Characteristic> getInitialCaracteristics() {
+    public ArrayList<Characteristic> getInitialCharacteristics() {
         return initialCharacteristics;
     }
 
-    public ArrayList<Characteristic> getCaracteristics() {
+    public ArrayList<Characteristic> getCharacteristics() {
         return characteristics;
     }
 
@@ -64,11 +66,11 @@ public class Gallic {
         return neighborhood;
     }
 
-    public Profession getProfession() {
+    public ProfessionEnum getProfession() {
         return profession;
     }
 
-    public CivicStatus getCivicStatus() {
+    public CivicStatusEnum getCivicStatus() {
         return civicStatus;
     }
 
