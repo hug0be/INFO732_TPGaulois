@@ -28,6 +28,7 @@ public class Gallic {
         neighborhood = _neighborhood;
         profession = _profession;
         civicStatus = _civicStatus;
+        potionUsages = new ArrayList<>();
     }
 
     public String getName() {
@@ -84,5 +85,32 @@ public class Gallic {
             System.out.print(charac.getClass().getName() + " " + charac.getValue() + " | ");
         }
         System.out.println();
+    }
+    public void displayPotionUsages() {
+        System.out.print(getName() + " : ");
+        for (PotionUsage usage : potionUsages) {
+            System.out.print(usage + " | ");
+        }
+        System.out.println();
+    }
+
+    public void usePotion(Potion potion, float realDose) {
+
+        ArrayList<Characteristic>  gallicCharacteristic = this.getCharacteristics();
+        boolean hasDone;
+        for (Characteristic potionCharac : potion.getBuffs()){
+            hasDone = false;
+            for (Characteristic gallicCharac: gallicCharacteristic) {
+                // Check if the characteristic type is the same
+                if(potionCharac.getClass() != gallicCharac.getClass()) continue;
+                gallicCharac.increaseValue(potionCharac.getValue());
+                hasDone = true;
+                break;
+            }
+            if(!hasDone) gallicCharacteristic.add(potionCharac);
+        }
+
+
+        this.potionUsages.add(new PotionUsage(potion, realDose));
     }
 }

@@ -32,12 +32,14 @@ public class Main {
         ArrayList<Characteristic> strenghtBuffs = new ArrayList<>(
                 Arrays.asList(new Strength(10))
         );
+        Potion strenghtPotion = new Potion("Essence du berserk", 60, strenghtBuffs);
+        Potion bgPotion = new Potion("Essence du bg de la night", 60, strenghtBuffs);
 
-        StrenghtPotion strenghtPotion = new StrenghtPotion("Essence du berserk", 60, strenghtBuffs);
-        strenghtPotion.apply(exemplix);
 
-
+        exemplix.usePotion(strenghtPotion, 20);
+        exemplix.usePotion(bgPotion, 20);
 
         exemplix.displayCharacteristics();
+        exemplix.displayPotionUsages();
     }
 }

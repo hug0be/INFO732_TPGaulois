@@ -11,4 +11,21 @@ public class PotionUsage {
         amount = _amount;
         date = new Date( );
     }
+
+    @Override
+    public String toString() {
+        return this.getPotion().getName() + " " + this.getAmount() +  " " + this.getDate();
+    }
+
+    public Potion getPotion() {
+        return potion;
+    }
+
+    public float getAmount() {
+        return amount;
+    }
+
+    public Date getDate() {
+        return date;
+    }
 }
