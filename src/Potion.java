@@ -2,6 +2,8 @@ import java.util.ArrayList;
 
 public class  Potion {
     private String name;
+
+    // Number of days to wait for a next usage
     private int cooldown;
     private ArrayList<Characteristic> buffs;
 

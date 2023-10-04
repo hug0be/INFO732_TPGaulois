@@ -22,7 +22,7 @@ public class Main {
             81,
             "rue des menhirs",
             5,
-                exemplixCharacteristics,
+            exemplixCharacteristics,
             quartiers.get(0),
             ProfessionEnum.Swordman,
             CivicStatusEnum.Fighter
@@ -30,11 +30,11 @@ public class Main {
 
         exemplix.displayCharacteristics();
 
-        ArrayList<Characteristic> strenghtBuffs = new ArrayList<>(
+        ArrayList<Characteristic> strengthBuffs = new ArrayList<>(
                 Arrays.asList(new Strength(10))
         );
-        Potion strenghtPotion = new Potion("Essence du berserk", 60, strenghtBuffs);
-        Potion bgPotion = new Potion("Essence du bg de la night", 60, strenghtBuffs);
+        Potion strenghtPotion = new Potion("Essence du berserk", 60, strengthBuffs);
+        Potion bgPotion = new Potion("Essence du bg de la night", 60, strengthBuffs);
 
 
         exemplix.usePotion(strenghtPotion, 20);

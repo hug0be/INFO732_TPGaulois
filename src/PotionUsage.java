@@ -1,7 +1,7 @@
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class PotionUsage {
-
     private Potion potion;
     private float amount;
     private LocalDate date;
@@ -14,7 +14,7 @@ public class PotionUsage {
 
     @Override
     public String toString() {
-        return this.getPotion().getName() + " " + this.getAmount() +  " " + this.getDate();
+        return potion.getName() + " " + amount +  "cl " + date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
     }
 
     public Potion getPotion() {
