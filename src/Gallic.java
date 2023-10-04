@@ -77,4 +77,12 @@ public class Gallic {
     public ArrayList<PotionUsage> getPotionUsages() {
         return potionUsages;
     }
+
+    public void displayCharacteristics() {
+        System.out.print(getName() + " : ");
+        for (Characteristic charac : getCharacteristics()) {
+            System.out.print(charac.getClass().getName() + " " + charac.getValue() + " | ");
+        }
+        System.out.println();
+    }
 }

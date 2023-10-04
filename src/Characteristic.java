@@ -11,7 +11,7 @@ public abstract class Characteristic {
         return value;
     }
 
-    public void increaseValue() { value++; }
+    public void increaseValue(int _value) { value += _value; }
     public void decreaseValue() {
         if(value <= 1) throw new IllegalArgumentException("Cannot decrease value to 0");
         value--;
@@ -21,7 +21,7 @@ public abstract class Characteristic {
         for (Characteristic other: others) {
             // Check if the characteristic type is the same
             if(this.getClass() != other.getClass()) continue;
-            other.increaseValue();
+            other.increaseValue(this.getValue());
             return others;
         }
         return others;

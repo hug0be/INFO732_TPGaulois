@@ -27,11 +27,17 @@ public class Main {
             CivicStatusEnum.Fighter
         );
 
-        System.out.println(exemplix);
-        
-        StrenghtPotion strenghtPotion = new StrenghtPotion("Essence du berserk", 60);
-        exemplix.usePotion(strenghtPotion);
+        exemplix.displayCharacteristics();
 
-        System.out.println(exemplix);
+        ArrayList<Characteristic> strenghtBuffs = new ArrayList<>(
+                Arrays.asList(new Strength(10))
+        );
+
+        StrenghtPotion strenghtPotion = new StrenghtPotion("Essence du berserk", 60, strenghtBuffs);
+        strenghtPotion.apply(exemplix);
+
+
+
+        exemplix.displayCharacteristics();
     }
 }

@@ -1,7 +1,5 @@
 public class Strength extends Characteristic {
-    public String field;
-    public Strength(int _value, String _field) {
+    public Strength(int _value) {
         super(_value);
-        field = _field;
     }
 }
