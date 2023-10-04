@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Gallic implements IBattleListener {
+public class Gallic {
     private String name;
     private String NNIG;
     private String birthDate;
@@ -18,21 +18,6 @@ public class Gallic implements IBattleListener {
         name = _name; NNIG = _NNIG; birthDate = _birthdate; weight = _weight; street = _street; streetNumber = _streetNumber;
         initialCharacteristics = _characteristics; characteristics = _characteristics;
         neighborhood = _neighorhood; profession = _profession; civicStatus = _civicStatus;
-    }
-
-    @Override
-    public void onNewBattle(BattleEvent event) {
-
-    }
-
-    @Override
-    public void onBattleCancel(BattleEvent event) {
-
-    }
-
-    @Override
-    public void onBattleConfirm(BattleEvent event) {
-
     }
 
     public String getName() {
