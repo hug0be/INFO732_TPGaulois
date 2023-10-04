@@ -20,4 +20,8 @@ public class  Potion {
     public String getName() {
         return name;
     }
+
+    public int getCooldown() {
+        return cooldown;
+    }
 }

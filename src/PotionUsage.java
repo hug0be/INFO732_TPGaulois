@@ -1,15 +1,15 @@
-import java.util.Date;
+import java.time.LocalDate;
 
 public class PotionUsage {
 
     private Potion potion;
     private float amount;
-    private Date date;
+    private LocalDate date;
 
     public PotionUsage (Potion _potion, float _amount){
         potion = _potion;
         amount = _amount;
-        date = new Date( );
+        date = LocalDate.now();
     }
 
     @Override
@@ -25,7 +25,7 @@ public class PotionUsage {
         return amount;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 }

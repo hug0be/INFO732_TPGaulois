@@ -1,7 +1,8 @@
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Gallic {
     private String name;
@@ -82,6 +83,8 @@ public class Gallic {
         return potionUsages;
     }
 
+    public PotionUsage getLastPotionTaken (){return this.getPotionUsages().get(this.getPotionUsages().size() - 1);}
+
     public void displayCharacteristics() {
         System.out.print(getName() + " : ");
         for (Characteristic charac : getCharacteristics()) {
@@ -98,26 +101,27 @@ public class Gallic {
     }
 
     public void usePotion(Potion potion, float realDose) {
-
-        ArrayList<Characteristic>  gallicCharacteristic = this.getCharacteristics();
+        if ((!this.getPotionUsages().isEmpty()) && ChronoUnit.DAYS.between(getLastPotionTaken().getDate().plusDays(potion.getCooldown()), LocalDate.now())<0){
+            System.out.println("Potion not ready no be used");
+            return;
+        }
+        ArrayList<Characteristic> gallicCharacteristic = this.getCharacteristics();
         boolean hasDone;
-        for (Characteristic potionCharac : potion.getBuffs()){
+        for (Characteristic potionCharac : potion.getBuffs()) {
             hasDone = false;
-            for (Characteristic gallicCharac: gallicCharacteristic) {
+            for (Characteristic gallicCharac : gallicCharacteristic) {
                 // Check if the characteristic type is the same
-                if(potionCharac.getClass() != gallicCharac.getClass()) continue;
+                if (potionCharac.getClass() != gallicCharac.getClass()) continue;
                 gallicCharac.increaseValue(potionCharac.getValue());
                 hasDone = true;
                 break;
             }
-            if(!hasDone) gallicCharacteristic.add(potionCharac);
+            if (!hasDone) gallicCharacteristic.add(potionCharac);
         }
-
-
         this.potionUsages.add(new PotionUsage(potion, realDose));
     }
 
-    public int getAge() {
+        public int getAge() {
         Period period = Period.between(birthDate, LocalDate.now());
         return period.getYears();
     }
