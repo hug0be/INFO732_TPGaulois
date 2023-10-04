@@ -11,19 +11,9 @@ public abstract class Characteristic {
         return value;
     }
 
-    public void increaseValue() { value++; }
-    public void decreaseValue() {
+    public void increaseValue(int _value) {value = value + _value; }
+    public void decreaseValue(int _value) {
         if(value <= 1) throw new IllegalArgumentException("Cannot decrease value to 0");
-        value--;
-    }
-
-    public ArrayList<Characteristic> add(ArrayList<Characteristic> others) {
-        for (Characteristic other: others) {
-            // Check if the characteristic type is the same
-            if(this.getClass() != other.getClass()) continue;
-            other.increaseValue();
-            return others;
-        }
-        return others;
+        value = value - _value;
     }
 }
