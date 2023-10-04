@@ -5,12 +5,12 @@ import java.util.Arrays;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Neighborhood> quartiers = new ArrayList<Neighborhood>();
+        ArrayList<Neighborhood> quartiers = new ArrayList<>();
         quartiers.add(new Neighborhood("Petit-Port", "img/flag/petitport.png"));
-        quartiers.add(new Neighborhood("Chanzy", "img/flag/chanzy.png"));
-        quartiers.add(new Neighborhood("Rond-Point", "img/flag/rondpoint.png"));
+        quartiers.add(new Neighborhood("Chanzy", "img/flag/chanzy.jpg"));
+        quartiers.add(new Neighborhood("Rond-Point", "img/flag/rondpoint.jpg"));
 
-        ArrayList<Characteristic> exemplixCharacteristics = new ArrayList<Characteristic>(
+        ArrayList<Characteristic> exemplixCharacteristics = new ArrayList<>(
                 Arrays.asList(new Endurance(10), new Intelligence(29))
         );
         
