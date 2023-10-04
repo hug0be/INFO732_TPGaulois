@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -17,7 +18,7 @@ public class Main {
         Gallic exemplix = new Gallic(
             "exemplix",
             "0910274041001",
-            "10-03-1991",
+            LocalDate.of(1991, 3, 10),
             81,
             "rue des menhirs",
             5,

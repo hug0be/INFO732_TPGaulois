@@ -1,9 +1,12 @@
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Gallic {
     private String name;
     private String NNIG;
-    private String birthDate;
+    private LocalDate birthDate;
     private int weight;
     private String street;
     private int streetNumber;
@@ -14,7 +17,7 @@ public class Gallic {
     private CivicStatusEnum civicStatus;
     private ArrayList<PotionUsage> potionUsages;
 
-    public Gallic(String _name, String _NNIG, String _birthdate, int _weight, String _street, int _streetNumber, ArrayList<Characteristic> _characteristics, Neighborhood _neighborhood, ProfessionEnum _profession, CivicStatusEnum _civicStatus) {
+    public Gallic(String _name, String _NNIG, LocalDate _birthdate, int _weight, String _street, int _streetNumber, ArrayList<Characteristic> _characteristics, Neighborhood _neighborhood, ProfessionEnum _profession, CivicStatusEnum _civicStatus) {
         if(_NNIG.length() != 13) throw new IllegalArgumentException("Le NNIG du gaulois doit contenir 13 caractères");
 
         name = _name;
@@ -39,7 +42,7 @@ public class Gallic {
         return NNIG;
     }
 
-    public String getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 
@@ -112,5 +115,10 @@ public class Gallic {
 
 
         this.potionUsages.add(new PotionUsage(potion, realDose));
+    }
+
+    public int getAge() {
+        Period period = Period.between(birthDate, LocalDate.now());
+        return period.getYears();
     }
 }
