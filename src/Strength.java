@@ -1,4 +1,4 @@
-public class Strength extends Caracteristic {
+public class Strength extends Characteristic {
     public String field;
     public Strength(int _value, String _field) {
         super(_value);

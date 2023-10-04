@@ -1,7 +1,5 @@
-public class Endurance extends Caracteristic {
-    public String field;
-    public Endurance(int _value, String _field) {
+public class Endurance extends Characteristic {
+    public Endurance(int _value) {
         super(_value);
-        field = _field;
     }
 }

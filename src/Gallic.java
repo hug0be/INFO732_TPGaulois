@@ -7,16 +7,16 @@ public class Gallic implements IBattleListener {
     private int weight;
     private String street;
     private int streetNumber;
-    private final ArrayList<Caracteristic> initialCaracteristics;
-    private ArrayList<Caracteristic> caracteristics;
+    private final ArrayList<Characteristic> initialCharacteristics;
+    private ArrayList<Characteristic> characteristics;
     private Neighborhood neighborhood;
     private ProfessionEnum profession;
     private CivicStatusEnum civicStatus;
     private ArrayList<PotionUsage> potionUsages;
 
-    public Gallic(String _name, String _NNIG, String _birthdate, int _weight, String _street, int _streetNumber, ArrayList<Caracteristic> _caracteristics, Neighborhood _neighorhood, ProfessionEnum _profession, CivicStatusEnum _civicStatus) {
+    public Gallic(String _name, String _NNIG, String _birthdate, int _weight, String _street, int _streetNumber, ArrayList<Characteristic> _characteristics, Neighborhood _neighorhood, ProfessionEnum _profession, CivicStatusEnum _civicStatus) {
         name = _name; NNIG = _NNIG; birthDate = _birthdate; weight = _weight; street = _street; streetNumber = _streetNumber;
-        initialCaracteristics = _caracteristics; caracteristics = _caracteristics;
+        initialCharacteristics = _characteristics; characteristics = _characteristics;
         neighborhood = _neighorhood; profession = _profession; civicStatus = _civicStatus;
     }
 
@@ -67,12 +67,12 @@ public class Gallic implements IBattleListener {
         return streetNumber;
     }
 
-    public ArrayList<Caracteristic> getInitialCaracteristics() {
-        return initialCaracteristics;
+    public ArrayList<Characteristic> getInitialCaracteristics() {
+        return initialCharacteristics;
     }
 
-    public ArrayList<Caracteristic> getCaracteristics() {
-        return caracteristics;
+    public ArrayList<Characteristic> getCaracteristics() {
+        return characteristics;
     }
 
     public Neighborhood getNeighborhood() {

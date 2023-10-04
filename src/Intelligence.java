@@ -1,7 +1,5 @@
-public class Intelligence extends Caracteristic {
-    public String field;
-    public Intelligence(int _value, String _field) {
+public class Intelligence extends Characteristic {
+    public Intelligence(int _value) {
         super(_value);
-        field = _field;
     }
 }

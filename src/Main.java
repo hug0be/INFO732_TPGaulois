@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Date;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
@@ -11,7 +10,7 @@ public class Main {
         quartiers.add(new Neighborhood("Chanzy", "img/flag/chanzy.png"));
         quartiers.add(new Neighborhood("Rond-Point", "img/flag/rondpoint.png"));
 
-        ArrayList<Caracteristic> exemplixCaracteristics = new ArrayList<Caracteristic>(
+        ArrayList<Characteristic> exemplixCharacteristics = new ArrayList<Characteristic>(
                 Arrays.asList(new Endurance(10), new Intelligence(29))
         );
         
@@ -22,7 +21,7 @@ public class Main {
             81,
             "rue des menhirs",
             5,
-            exemplixCaracteristics,
+                exemplixCharacteristics,
             quartiers.get(0),
             ProfessionEnum.Swordman,
             CivicStatusEnum.Fighter
